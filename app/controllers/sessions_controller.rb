@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
     puts params[:password]
     puts '----'
 
-    # if user && user.authenticate(params[:password])
-    if user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
+    # if user.authenticate(params[:password])
       puts "----------------------------------"
       session[:user_id] = user.id
       redirect_to '/'
